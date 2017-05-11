@@ -47,15 +47,15 @@ class KnownValues(unittest.TestCase):
         # Check for expected output
         self.assertEqual(False, result)
 
-    def test_answerCallForFriendDifferentAreaCodeGoodTime(self):
+    def test_answerCallForFriendDifferentAreaCodeGoodTime_2(self):
         # Capture the results of the function
         result = answerCall.answerCall("F", False, "13:00")
         # Check for expected output
-        self.assertEqual(False, result)
+        self.assertEqual(True, result)
 
     def test_answerCallForRelativeDifferentAreaCodeGoodTime(self):
         # Capture the results of the function
-        result = answerCall.answerCall("R", True, "9:00")
+        result = answerCall.answerCall("R", False, "9:00")
         # Check for expected output
         self.assertEqual(True, result)
 
@@ -65,7 +65,7 @@ class KnownValues(unittest.TestCase):
         # Check for expected output
         self.assertEqual(False, result)
 
-    def test_answerCallForRelativeDifferentAreaCodeGoodTime(self):
+    def test_answerCallForRelativeDifferentAreaCodeGoodTime_2(self):
         # Capture the results of the function
         result = answerCall.answerCall("R", False, "16:00")
         # Check for expected output
