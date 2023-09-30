@@ -1,14 +1,30 @@
 # answerCall.py
-# by _______
+# by Riley Gregory
 
-# For instructions on what to do, see README.md
-# or visit (https://github.com/HundredVisionsGuy/answerCall)
+def answerCall(caller_code, sameAreaCode, cur_time):
+    # hours from cur_time
+    hours_string = cur_time.split(":")[0]
+    hours = int(hours_string)
 
-# Write function defintion: answerCall()
-
-# Make sure it returns a value
+    # check if  call is after 10pm or before 7am
+    if hours >= 22 or hours < 7:
+        return False
+    
+    # caller is a telemarketer check
+    if caller_code == "T":
+        return False
+    
+    # caller is a relative or friend check
+    if caller_code in ["F", "R"]:
+        return True
+    
+    # unknown caller check and has the same area code
+    if caller_code == "U" and sameAreaCode:
+        return True
+    
+    return False
 
 if __name__ == '__main__':
-    # Call the function in here if you want to test it
-    # Make sure it's indented
-    pass # remove or comment out this line if you wish to test the function
+    # example test
+    result = answerCall("U", True, "09:00")
+    print(result)  # expected output is True
