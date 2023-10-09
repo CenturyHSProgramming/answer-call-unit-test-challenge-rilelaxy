@@ -7,7 +7,7 @@ def answerCall(caller_code, sameAreaCode, cur_time):
     hours = int(hours_string)
 
     # check if  call is after 10pm or before 7am
-    if hours >= 22 or hours < 7:
+    if hours > 22 or hours < 7:
         return False
     
     # caller is a telemarketer check
